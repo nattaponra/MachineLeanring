@@ -19,8 +19,8 @@ for iter = 1:num_iters
 
 
 
-
-
+    fprintf('Values of the cost function: ');
+    fprintf('%f \n', computeCost(X, y, theta));
 
 
     % ============================================================
