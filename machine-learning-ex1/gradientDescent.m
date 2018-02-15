@@ -19,9 +19,17 @@ for iter = 1:num_iters
 
 
 
-    fprintf('Values of the cost function: ');
-    fprintf('%f \n', computeCost(X, y, theta));
+    % fprintf('Values of the cost function: ');
+    % fprintf('%f \n', computeCost(X, y, theta));
+    Update = 0;
+    for i=1:m,
+        Update = Update + alpha/m * (theta' * X(i,:)' - y(i)) *  X(i,:)';
+    end
 
+    theta = theta - Update;
+
+
+ 
 
     % ============================================================
 
