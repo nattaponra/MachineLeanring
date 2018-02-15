@@ -39,8 +39,10 @@ pause;
 %% ======================= Part 2: Plotting =======================
 fprintf('Plotting Data ...\n')
 data = load('ex1data1.txt');
+%% X = population of a city.
+%% y = the profit of a food truck in that city.
 X = data(:, 1); y = data(:, 2);
-m = length(y); % number of training examples
+m = length(y); % row number of training examples
 
 % Plot Data
 % Note: You have to complete the code in plotData.m
