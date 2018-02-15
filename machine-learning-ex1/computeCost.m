@@ -13,9 +13,10 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
- J =   ((X * theta - y)' * (X * theta - y))/(2*m); % vectorized form
+% J =   ((X * theta - y)' * (X * theta - y))/(2*m); % vectorized form
 
-
+J = 1/(2*m) * (X * theta - y)' * (X * theta - y); % vectorized form
+ 
  
 
 
