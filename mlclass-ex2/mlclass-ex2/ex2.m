@@ -46,7 +46,7 @@ legend('Admitted', 'Not admitted')
 hold off;
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+%pause;
 
 
 %% ============ Part 2: Compute Cost and Gradient ============
@@ -71,7 +71,7 @@ fprintf('Gradient at initial theta (zeros): \n');
 fprintf(' %f \n', grad);
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+%pause;
 
 
 %% ============= Part 3: Optimizing using fminunc  =============
@@ -79,10 +79,15 @@ pause;
 %  optimal parameters theta.
 
 %  Set options for fminunc
-options = optimset('GradObj', 'on', 'MaxIter', 400);
+% ???????????  Option
+% ??? GradObj ???? on ??????????????? return ???? cost ??? the gradient
+% ??? MaxIter ???? 400 ???????????????? 400 step 
+options = optimset('GradObj', 'on', 'MaxIter', 400,'Algorithm','trust-region');
 
 %  Run fminunc to obtain the optimal theta
 %  This function will return theta and the cost 
+% @(t)(costFunction(t, X, y)) ???????????????????? fminunc()???
+
 [theta, cost] = ...
 	fminunc(@(t)(costFunction(t, X, y)), initial_theta, options);
 
@@ -105,7 +110,7 @@ legend('Admitted', 'Not admitted')
 hold off;
 
 fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
+%pause;
 
 %% ============== Part 4: Predict and Accuracies ==============
 %  After learning the parameters, you'll like to use it to predict the outcomes

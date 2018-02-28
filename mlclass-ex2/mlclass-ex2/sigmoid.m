@@ -10,8 +10,8 @@ g = zeros(size(z));
 %               vector or scalar).
 
 
-
-
+% 1.2.1 Warmup exercise: sigmoid function
+g = 1./(1.+exp(-1.*z));
 
 % =============================================================
 
